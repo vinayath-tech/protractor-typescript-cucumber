@@ -2,7 +2,9 @@ pipeline {
     agent { dockerfile true}
     stages{
         stage('checkout code') {
-            sh 'git checkout master'
+            steps {
+                sh 'git checkout master'
+            }
         }
         stage('Build Docker image') {
             steps {
