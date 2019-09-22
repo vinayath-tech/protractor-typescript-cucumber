@@ -25,7 +25,7 @@
     "add-contributors": "all-contributors add",
     "generate-contributors": "all-contributors generate",
     "pree2e": "tsc",
-    "e2e": "protractor typeScript/config/config.js --no-webdriver-update",
+    "e2e": "protractor typeScript/config/config.js",
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start"
   },
