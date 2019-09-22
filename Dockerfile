@@ -19,11 +19,13 @@ WORKDIR /workdir
 COPY package.json ./
 RUN npm install
 
-# Copy tests
+# Copy test project
 COPY . ./
-RUN ls -al
+COPY reports ./
 
+RUN ls -al
 RUN npm run webdriver-update
+
 # Execute tests
 ENTRYPOINT ["npm", "run", "e2e"]
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
