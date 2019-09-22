@@ -13,6 +13,13 @@ const cucumberReporterOptions = {
     theme: "bootstrap",
 };
 
+const cucumberJsonReporterOptions = {
+    jsonFile: targetJson,
+    output: jsonReports + "/cucumber_reporter.json",
+    reportSuiteAsScenarios: true,
+    theme: "bootstrap",
+};
+
 export class Reporter {
 
     public static createDirectory(dir: string) {
@@ -23,7 +30,8 @@ export class Reporter {
 
     public static createHTMLReport() {
         try {
-            reporter.generate(cucumberReporterOptions); // invoke cucumber-html-reporter
+           // reporter.generate(cucumberReporterOptions); // invoke cucumber-html-reporter
+           reporter.generate(cucumberJsonReporterOptions);
         } catch (err) {
             if (err) {
                 throw new Error("Failed to save cucumber test results to json file.");
