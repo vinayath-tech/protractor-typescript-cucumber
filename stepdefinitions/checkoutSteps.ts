@@ -1,13 +1,20 @@
 import { browser, protractor } from "protractor";
 import { HomePage } from "../pages/homePage";
 import { Given, TableDefinition } from "cucumber";
-import { assert, expect } from "chai";
+//import { assert, expect } from "chai";
 import { config } from "../config/config";
 import { CheckoutPage } from "../pages/checkoutPage";
 const { When, Then } = require("cucumber");
 
 const homePage: HomePage = new HomePage();
 const checkoutPage: CheckoutPage = new CheckoutPage();
+
+const chai = require('chai');
+const chaiAsPromised = require('chai-as-promised');
+
+ // Load chai-as-promised support
+ chai.use(chaiAsPromised);
+ var expect = chai.expect;
 
 Given('I navigate to homepage', async ()=> {
     await browser.get(config.baseUrl);
@@ -46,7 +53,7 @@ Then('I should be navigated to the checkout page', async ()=> {
 
   Then('the product should be successfully removed', async ()=> {
     await checkoutPage.emptyNotification.getText().then(async(actText)=>{
-       expect(actText).to.equal("Your shopping cart is empty.");
+       chai.expect(actText).to.equal("Your shopping cart is empty.");
     })
   });
 
