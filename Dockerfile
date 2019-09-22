@@ -16,7 +16,7 @@ RUN mkdir -p /workdir/output
 WORKDIR /workdir
 
 # Install dependencies if any change
-COPY package.json package-lock.json ./
+COPY package.json ./
 RUN npm install
 
 # Copy tests
