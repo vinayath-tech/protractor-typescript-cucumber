@@ -23,7 +23,7 @@ RUN npm install
 COPY . ./
 RUN ls -al
 
-RUN npm run webdriver-update
+#RUN npm run webdriver-update
 # Execute tests
 ENTRYPOINT ["npm", "run", "e2e"]
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
