@@ -21,7 +21,6 @@ RUN npm install
 
 # Copy test project
 COPY . ./
-COPY reports ./
 
 RUN ls -al
 RUN npm run webdriver-update

@@ -1,0 +1,206 @@
+[
+  {
+    "description": "  As a Customer\n  I want to buy a dress via website\n  So that I don't want to go to a shop",
+    "keyword": "Feature",
+    "name": "Checkout a Dress",
+    "line": 1,
+    "id": "checkout-a-dress",
+    "tags": [],
+    "uri": "features\\checkout.feature",
+    "elements": [
+      {
+        "id": "checkout-a-dress;checkout-functionality",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Checkout Functionality",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I navigate to homepage",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7895000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I add a dress to the cart",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2181000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I proceed to checkout",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1448000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "the dress shoud be successfully added to the cart",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 957000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I should be navigated to the checkout page",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1382000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "typeScript\\support\\hooks.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "checkout-a-dress;delete-a-product",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Delete a product",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "I navigate to homepage",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7504000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I add a dress to the cart",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2113000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I proceed to checkout",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 889000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I remove the product",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2090000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "the product should be successfully removed",
+            "match": {
+              "location": "typeScript\\stepdefinitions\\checkoutSteps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 72000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "typeScript\\support\\hooks.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
