@@ -1,5 +1,5 @@
 pipeline {
-    agent { dockerfile true}
+    agent any
     stages{
         stage('checkout code') {
             steps {
@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build Docker image') {
             steps {
-                sh 'docker build -t gok-jenkins-test .'
+                sh 'docker build -t=gok-jenkins-test .'
             }
         }
         stage('Start selenium grid') {
