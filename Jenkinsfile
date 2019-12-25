@@ -11,14 +11,19 @@ pipeline {
                 sh 'docker build -t gok-jenkins-test .'
             }
         }
-        stage('Run test'){
+        stage('Start selenium grid') {
             steps {
-                sh 'docker run --name int-test -it gok-jenkins-test'
+                  sh 'docker-compose up -d hub chrome firefox'
             }
         }
-        stage('Copy test reports to workspace'){
+        stage('Run tests') {
             steps {
-                sh 'docker cp int-test:/workdir/reports ./'
+                sh 'docker-compose up gok-jenkins-test'
+            }
+        }
+        stage('Shut down grid') {
+            steps {
+                sh 'docker-compose down'
             }
         }
     }
