@@ -1,9 +1,9 @@
 import { browser, protractor } from "protractor";
 import { HomePage } from "../pages/homePage";
 import { Given, TableDefinition } from "cucumber";
-//import { assert, expect } from "chai";
 import { config } from "../config/config";
 import { CheckoutPage } from "../pages/checkoutPage";
+import { async } from "q";
 const { When, Then } = require("cucumber");
 
 const homePage: HomePage = new HomePage();
@@ -18,13 +18,20 @@ const chaiAsPromised = require('chai-as-promised');
 
 Given('I navigate to homepage', async ()=> {
     await browser.get(config.baseUrl);
-    await homePage.productLink.click().then(async()=>{
-        await expect(homePage.addToCartBtn()).to.exist;
-        await browser.sleep(5000);
-    })
+    await homePage.dressHeader.isDisplayed().then(async()=>{
+        await homePage.dressHeader.click().then(async()=>{
+            await browser.sleep(2000);
+            await homePage.productLink.isDisplayed().then(async()=>{
+
+                await browser.actions().mouseMove(homePage.productLink).perform();
+                await expect(homePage.addToCartBtn()).to.exist;
+                await browser.sleep(3000);
+            });
+        });
+    });
 });
 
-Given('I add a dress to the cart', async () =>{
+Given('I add a dress to the cart', async () => {
     await homePage.addToCartBtn().click().then(async()=>{
         await expect(checkoutPage.proceedToCheckoutBtn).to.exist;
         await browser.sleep(2000);

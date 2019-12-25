@@ -4,3 +4,4 @@ TypeScript/
 .vscode
 .DS_Store
 package-lock.json
+reports/
