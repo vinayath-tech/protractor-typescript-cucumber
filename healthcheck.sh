@@ -12,5 +12,5 @@ do
 	sleep 1
 done
 
-# start the java command
+# To run the tests
 npm run e2e
